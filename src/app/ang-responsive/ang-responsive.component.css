@@ -1,0 +1,59 @@
+/* .main{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+
+}
+
+img{
+   width: 65%;
+    object-fit: cover;
+}
+
+
+.mn1{
+    width: 35%;
+  background-color: crimson;
+  position: relative;
+  justify-items: center;
+  align-items: center;
+  padding: 5px;
+flex-wrap: wrap;
+  
+}
+.cb{
+    text-align: center;
+}
+    
+
+
+@media(min-width:780px){
+
+    .main{
+        flex-direction: row;
+    }
+}
+
+
+ */
+ :target{
+     background-color: crimson;
+     font-size: 5rem;
+ }
+
+ 
+    
+  
+  #section1 {
+    height: 600px;
+    background-color: pink;
+    scroll-behavior: smooth;
+  
+  }
+  
+  #section2 {
+    height: 600px;
+    background-color: yellow;
+    scroll-behavior: smooth;
+  
+  }

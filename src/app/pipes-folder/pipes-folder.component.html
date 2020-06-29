@@ -1,0 +1,233 @@
+<!-- <p>pipes-folder works!</p>
+<h1>Pipes working</h1>
+{{dateofbirth}}<br>
+
+Date:Formats:
+{{dateofbirth | date}}<br>
+
+Medium: {{dateofbirth | date: 'medium'}}
+<br>
+Small: 
+
+{{dateofbirth | date: 'short'}}
+<br>
+fullDate:
+{{dateofbirth | date: 'fullDate'}}
+
+<br>
+Time:   
+{{dateofbirth | date: 'shortTime'}}
+<br>
+FullTile:
+
+{{dateofbirth | date: 'fullTime'}}
+<br><br>
+
+Result of pipe is : {{pbirth | apipe}}
+<br> <br>
+
+Result of Secondpipe is : {{pbirth | spipe}}
+
+<br><br>
+
+
+Result If Else  of Secondpipe is : {{pbirth | spipe : 'y'}}
+<br>
+
+Result If Else  of Secondpipe is : {{pbirth | spipe : 'm'}}
+<br><br>
+Result If Else  of Secondpipe is : {{pbirth | spipe : ''}}
+
+
+
+<div class="container">
+    <div class="s1">
+        <input type="number" [(ngModel)]="firstValue"><br><br>
+        <input type="number"  [(ngModel)]="secondvalue"><br><br>
+        
+        <button class="s2" (click)="add()">+</button>
+        <button class="s2" (click)="dev()">/</button>
+        <button  class="s2"(click)="sub()">-</button>
+        <button class="s2" (click)="multiple()">*</button>
+        <button  class="s2"(click)="Mod()">%</button>
+        <h1>the sum of {{firstValue}} and  {{secondvalue}} is: {{result}}</h1>
+        <input type="text" name="rers" id="ss" [(ngModel)]= "result"><br><br><br>
+
+        <h1>Indian Currency to American Currencys </h1>
+     Indian rupees: <input type="number"  [(ngModel)]="inp1" (keyup)="f1()"><br>
+     American currency's  ($'s') :  <input type="number" [(ngModel)]="inp2" (keyup)="f2()">
+      
+     <h1>{{inp1}} rupees of Indian is Equal to  {{inp2}} of American currency</h1>
+     
+     <h1>Amrican Currency to Indian rupees</h1>
+
+     American currency:  <input type="number" [(ngModel)]="inp2" (keyup)="f3()" ><br>
+     Indian rupees:      <input type="number"  [(ngModel)]="inp1" (keyup)="f4()">
+        
+        <h1>{{rupees}}</h1>
+        <h1> indian currency {{inp1}} and ac{{inp2}}</h1> 
+
+
+        US currency: <input type="number" name="nmmm" id="nmmm" [(ngModel)] = 'dollars' (keyup) = "res()">
+        Indian Paisa: <input type="number" name="nmmm1" id="nmmm1" [(ngModel)] = 'paisa' (keyup) = "res1()">
+        
+        
+        
+        </div>
+    
+        <h1>Number Pipes</h1>
+        {{numbs}} <br> <br>
+        {{numbs | number: '4.3-4'}} 
+        <br>
+        <br>
+        {{numbs | number: '4.3-5'}}
+        <br> <br>
+        
+        {{numbs | number: '6.9-11'}} <br> <br>
+    {{numbs | number: '11.3-5'}}
+        <br><br>
+              {{numbs | number: '6.3-5'}}
+
+              <h1>Currency converter</h1>
+              {{salary}}
+              <br>
+              {{salary | currency : 'INR':true}} <br> <br>
+         
+              {{salary | currency : 'USD':true}}<br> <br>
+              
+              {{salary | currency : 'EUR':true}}
+              <br><br>
+              
+              {{salary | currency : '':true}}
+              <br><br>
+              
+              {{salary | currency : 'INR':false}}
+              <br><br>
+              Particular amount:{{salary | currency : '':true : '6.3-5'}}
+              <br><br>
+              <h1>Percentage</h1>
+
+              {{myPercentage}} 
+              <br><br>
+              {{myPercentage | percent }} 
+              <br><br>
+              <br><br>
+
+              {{stringConvert | uppercase}}
+              <br>
+              
+              {{stringConvert | lowercase}}
+
+              <h1>SliceChars</h1>
+              {{schars}} 
+              <br>
+              {{schars | slice :2:4 }}
+              <br>
+              {{schars | slice : -5 }}
+              <br>
+              {{schars | slice : 5 }}
+              <br>
+              {{schars | slice :-2:4 }}
+                  <br>
+              {{schars | slice :6:8 }}
+
+              <br><br>
+              {{schars | slice :2:5 }}
+
+              {{schars | slice : -9:-2 }}   -->
+
+              <!-- Object Format -->
+              <!-- <h1>obj1 Format</h1>
+              
+              {{obj1 | json}}
+              {{obj1 }}
+
+              {{arobj1 | json}}
+            </div>  -->
+
+                                                    <!-- Searching Employees -->
+
+<!-- <div class="form">
+    <input type="text" name="nm" id="nm" class="form-control" [(ngModel)] = "search">
+
+</div>
+
+<div *ngFor= "let p of employees | spipe : search">
+    Name: {{p.name}}  {{p.id}} <br>
+    Age: {{p.age}}  <br>
+salary:  {{p.sal}}<br>
+DateOfJoining: {{p.DateOfjoining}}<br>
+TypeOfEmployee:  {{p.empType}}<br>
+
+
+</div> -->
+
+
+                            <!-- Filtering Max and Min Employyes based on Salaries  -->
+<!-- 
+
+            <div *ngFor ="let otp of employees |  spipe : 10000:40000 ">
+            Name: {{otp.name}}  {{otp.id}} <br>
+              Age: {{otp.age}}  <br>
+          salary:  {{otp.sal}}<br>
+          DateOfJoining: {{otp.DateOfjoining}}<br>
+         TypeOfEmployee:  {{otp.empType}}<br>
+         <br><br>
+         
+            
+            </div>
+            <div class="container">
+                <div class="card" *ngFor = "let fres of employees">
+                    <div class="card-body">
+                        <div class="card-header">
+                            Name Of Employee : {{fres.name}}
+                            
+                        </div>
+                        <div class="card-text">
+                            Age: {{fres.age}}  <br>
+                            salary:  {{fres.sal}}<br>
+                            DateOfJoining: {{fres.DateOfjoining}}<br>
+                        <br>
+                          
+                        </div>
+                        <div class="card-footer">
+                            TypeOfEmployee:  {{fres.empType}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+               -->
+<div class="container">
+    <input type="text" name="nm1" id="nm1" class="form-control" [(ngModel)] ="searchItem">
+    <div class="card-columns">
+                  <div class="card" *ngFor="let mvs of movies | spipe : searchItem">
+
+                   <div class="card-body">
+                  <div class="card-header">
+                  
+                      Type OF Image:     {{mvs.Type}}
+                  </div>
+                
+                    <div class="card-image" style="width: 100%;">
+                            <img src="{{mvs.Poster}}" alt="img" width="100%">
+                    </div>
+                    
+                    <div class="card-text">
+                  Titlle of Image:   {{mvs.Title}}
+
+
+                    </div>
+                    <div class="card-footer">
+                       Year :  {{mvs.Year}} 
+                    </div>
+                </div>
+ 
+                   </div>
+               </div>
+            </div>
+
+
+
+
+
+              

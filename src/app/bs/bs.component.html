@@ -1,0 +1,85 @@
+<p>bs works!</p>
+<div class="container">
+    <!-- <button class="btn btn-primary">HitMe</button> -->
+
+<!-- (1)   <form #formName="ngForm" (ngSubmit)= "onSubmit(formName)"> -->
+  <form action=""  #formName="ngForm" (ngSubmit) = "onSubmit();" novalidate> 
+     <div class="form-group">
+    <label for="id">Id:</label>
+    <!-- <input type="text" class="form-control" id="id" [value]= 'std.id'> -->
+    
+    <input type="text" class="form-control" id="id" name="id" [(ngModel)]= 'std.id' required>
+  </div>
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <!-- <input type="text" class="form-control" id="name"  name= "name" [value]= 'std.name'> -->
+    
+    <input type="text" #empName="ngModel" class="form-control" id="name"  name= "name" [(ngModel)] = 'std.name' required pattern="^[a-zA-Z0-9 ]{4,30}"><br>
+    <!-- {{empName.className}} -->
+    
+    <div [hidden] = "empName.valid || empName.pristine || !empName.errors.required"><p class="alert alert-danger">Name Reequird ...:::)))</p></div>
+    <div  [hidden] = "empName.valid   || !empName.errors.pattern "><p class= "alert alert-danger">Should be a alphabets only</p></div>
+    <div [hidden] = "empName.invalid"><p class="alert alert-success">Valid details</p> </div> 
+                                        <!-- OR -->
+    <!-- <div *ngIf= "empName.invalid && empName.errors.required"><p class= "alert alert-danger">Name Reequird ...:::)))</p></div>
+    <div *ngIf= "empName.invalid && empName.errors.pattern"> <p class="alert alert-danger">Cannot Be aAn alphabets</p></div>
+    <div *ngIf= "empName.valid"><p style="color:green">Upated</p></div> -->
+        
+  </div>
+  <div class="form-group">
+    <label for="age">Agee:</label>
+    <!-- <input type="text" class="form-control" id="age" [value] = 'std.age'> -->
+    <input type="text" class="form-control" id="age" name="age" [(ngModel)] = 'std.age' required>
+ 
+  </div>
+
+  <div class="form-group">
+    <label for="sal">Salary:</label>
+    <!-- <input type="text" class="form-control" id="sal" [value] = 'std.sal'> -->
+    
+    <input type="text" class="form-control" id="sal" name="sal" [(ngModel)] = 'std.sal' required>
+  </div>
+
+  <div class="form-group">
+      <!-- <select name="" id="" class="form-control" [value]= "ang1"> -->
+         
+    <label for="sel">Select Type of DeprtMent:</label> 
+      <select name="sel" id="sel" class="form-control" [(ngModel)]= "std.department" [value] = 'ang1' required>
+         <ng-container *ngFor= "let ar1 of opts">
+             <ng-container *ngIf ="ar1 !== 'Ang4' ">
+             <option [value]="ar1">{{ar1}}</option>
+         </ng-container></ng-container>
+         
+      </select>
+
+  </div>
+  <div class="btn-group">
+  <button class="btn btn-info " (click)="newEmployee(); formName.reset()">ClickMe</button>&nbsp;&nbsp;
+  <button class="btn btn-primary"  name="sbtn" type="submit">Submit</button>
+</div>
+
+  
+</form>
+{{res122}}
+<button class="btn btn-primary"  name="sbtn" type="submit" (click)="submitForm()">SubmitSecondButton</button>
+</div><br><br><br>
+
+
+
+<div class="container">
+    <label for="sel">Select Type of DeprtMent:</label>
+    <select name="sel" id="sel" class="form-control" [(ngModel)] = "dt1" required>
+    <!-- <option *ngFor = "let ar of opts">{{ar}}</option> -->
+    <ng-container *ngFor ="let ar of opts">
+        <ng-container *ngIf = "ar !== 'Ang4'">
+            <option [ngValue] = 'ar'>{{ar}}</option>
+        </ng-container>
+    </ng-container>
+   
+</select><br>
+<input type="text" name="" id=""  class="form-control" [(ngModel)] = "dt1">
+</div>
+
+<input type="file" name="fmn1" id="fm1">
+
+

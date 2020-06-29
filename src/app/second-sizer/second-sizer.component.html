@@ -1,0 +1,31 @@
+<!-- Using Styles -->
+<p>second-sizer works!</p>
+<div [style.color] = "clr">Text of The Div Tag </div>
+<div style="color :red">Text of The Div Tag </div>
+
+<div [style.color] = "res ? clr : bc">Text of The Div Tag </div>
+<div [style.background-color] = "res ? clr : bc">Text of The Div Tag </div>
+<div [style.font-size.rem] = "res ? 1 : 5">Text of The Div Tag </div>
+<button [disabled] = "res" >ClickMe</button>
+<button [disabled] = "!res" >ClickMe12</button>
+<button [style.background-color] = "!res ? clr : bc "  [disabled] = "!res" >ClickMe</button>
+<button [style.font-size.em] = "!res ? 2 : 8 "  [disabled] = "res" >ClickMe</button>
+
+<!-- Using Class -->
+<!-- 
+<div class="bg">The First class</div>
+<div [class]= "clr1">My class Color</div>
+<div [class] = "'bg'">3rd Class</div>
+<div [class] = "rg">3rd Class</div> -->
+
+<!-- NgClass -->
+<!-- <div class="saveble modifieds finalres">Text to be an Ideal...!!!!!!!</div><br> -->
+<div [ngClass] = "setClasses()">Ok Text is ready</div>
+
+<!-- NgStyles -->
+<div [ngStyle]= "setStyles()">This Style Box</div>
+
+
+
+
+

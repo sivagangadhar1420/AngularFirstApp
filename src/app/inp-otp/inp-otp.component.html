@@ -1,0 +1,17 @@
+<h1>inp-otp working!</h1>
+
+<input type="text" name="nm1" id="nm1" [(ngModel)] = "firstName"><br>
+
+<input type="text" name="nm2" id="nm2" [(ngModel)] = "lastName"><br>
+<h2>
+
+FirstName:{{firstName}} And LastName: {{lastName}}</h2>
+
+<h1>@OUTPUT</h1>
+
+<input type="text" name="nm3" id="nm3" [ngModel] = "firstName" (ngModelChange) = "changeFirstName($event)"><br>
+
+<input type="text" name="nm4" id="nm4" [ngModel] = "lastName" (ngModelChange) = "changeLastName($event)"><br>
+
+
+

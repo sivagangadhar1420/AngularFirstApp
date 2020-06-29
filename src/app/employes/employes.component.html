@@ -1,0 +1,19 @@
+<div>
+    
+    <hr>
+    <div *ngIf = "selected; then selectedEmp; else normalEmp;"> </div>
+        <ng-template #selectedEmp>
+            Employee Details...!!!<br><br><br>
+            <b> ID={{emp.id}},Name={{emp.name}},<br><br>Age={{emp.age}}, Salary:{{emp.sal}},
+                EMPType:{{emp.EmpType}},DateOfJoing:{{emp.DateOfjoining}}
+        </b>
+        </ng-template>
+
+        <ng-template #normalEmp>
+            ID={{emp.id}},Name={{emp.name}},<br><br>Age={{emp.age}}, Salary:{{emp.sal}},
+            EMPType:{{emp.EmpType}},DateOfJoing:{{emp.DateOfjoining}}
+        </ng-template>
+    
+    </div>
+   
+   

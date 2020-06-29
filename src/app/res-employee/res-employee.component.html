@@ -1,0 +1,15 @@
+<h2>  All Employees</h2>
+<div>
+  <hr>
+    <div *ngFor="let e of employees">
+      <app-employes [selected]= "selectedEmployee == e " [emp] = "e"></app-employes>
+      <input type="button"  value="Select" (click) = "SelectFunn(e)">
+       </div>
+</div>
+
+
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx -->
+<!-- <h2>All Employee Details:::</h2>
+<div *ngFor = "let reslt of employees">
+  <hr>ID:{{reslt.id}},Name:{{reslt.name}},Salary:{{reslt.sal}}, Age:{{reslt.age}}, 
+  Date Of Joining: {{reslt.DateOfjoining}},Type : {{reslt.empType}}</div> -->

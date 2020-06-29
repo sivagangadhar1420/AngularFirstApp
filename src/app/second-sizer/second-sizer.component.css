@@ -1,0 +1,20 @@
+.bg{
+    background-color: greenyellow;
+    border: 3px solid red;
+}
+.lg{
+    background-color: hotpink;
+    padding: 10px;
+}
+.savable{
+    color:blue;
+}
+.finalres{
+    background-color: crimson;
+}
+.modifieds{
+    font-size: 10rem;
+}
+.res{
+    font-style: italic;
+}

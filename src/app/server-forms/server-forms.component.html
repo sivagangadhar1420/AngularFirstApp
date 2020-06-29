@@ -1,0 +1,102 @@
+<p>server-forms works!</p>
+<!-- <div>Yes I am reay To Die...!!!!  ::::)))</div> -->
+<div class="container">{{message}}</div>
+<div class="container">
+<!-- <form  [formGroup] = "empForm" #fnForm="ngForm"  (ngSubmit)= "onSubmit(fnForm.value);" novalidate> -->
+    
+<form  [formGroup] = "empFormss" #fnForm="ngForm"  (ngSubmit)= "onSubmit(empFormss.value);" novalidate>
+    <div class="form-group">
+        <label for="name">FirstName:</label>
+        <input type="text" name="fName" id="name" class="form-control"   formControlName="fName" required/>
+        <!-- <div  *ngIf="firstName.errors &&(firstName.pristine || firstName.touched);"> -->
+        <div  *ngIf="firstName.errors && (firstName.dirty || firstName.touched);">
+        <p *ngIf= " firstName.errors.required" class="alert-danger">Name Required..</p>
+        <p *ngIf=" firstName.errors.pattern" class="alert-danger">Must  not be an specialchars </p>
+        <p *ngIf=" firstName.errors.maxlength" class="alert-danger">Length must be only  a 8 charecters only</p>
+    </div>
+         
+       
+            <!-- <div  *ngIf="!firstName.errors.required &&(firstName.dirty || firstName.touched);"> -->
+                
+                <!-- It Will kept the default value as Valid using of pristine -->
+                <div *ngIf="!firstName.errors &&(firstName.pristine || firstName.touched);">
+                    <p class="alert-success">Valid...</p>
+                    <ul><li *ngFor= "let c of changer">{{c}}</li></ul>
+                    
+                    
+                </div>
+                       </div>  
+               
+            
+     <div class="form-group" >
+        <label for="ln">LastName:</label>
+        <input type="text" name="lName" id="ln" class="form-control" formControlName="lName" required>
+           <!-- <div  *ngIf="laststName.errors &&(lastName.pristine || lastName.touched);"> -->
+            <div *ngIf="lastName.errors && (lastName.dirty || lastName.touched);">
+                <p *ngIf= " lastName.errors.required" class="alert-danger">Name Required..</p>
+                <p *ngIf=" lastName.errors.pattern" class="alert-danger">Must  not be an specialchars </p>
+                <p *ngIf=" lastName.errors.maxlength" class="alert-danger">Length must be only  a 6 charecters only</p>
+        
+            </div>
+                
+               
+                    <div *ngIf="!lastName.errors &&(lastName.dirty || lastName.touched);">
+                        <!-- It Will kept the default value as Valid using of pristine -->
+                        <!-- <div class="form-control-valid-feedback" *ngIf="!lastName.errors &&(lastName.pristine || lastName.touched);"> -->
+                            <p class="alert-success">Valid...</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+    <label for="ln" class="label-control">Gender:</label>
+       
+        <input type="radio" name="type" class="mx-2" id="m"  value="Male" formControlName="type">
+        <label for="m">Male</label> 
+        <input type="radio" name="type"  id ="fm" class="mx-2"  value="FeMale" formControlName="type">  
+        <label for="fm">Female</label>
+    </div>
+
+    <div class="form-group">
+        <select name="sel" id="sl" class="form-control" formControlName= "degrees"  style="cursor: pointer;">
+            <option *ngFor = "let res of ar" [value] = "res" >{{res}}</option>
+        </select>
+    </div>
+
+   formValues: <pre>{{empFormss.value | json}}</pre>
+   formstatus:  <pre>{{empFormss.status | json}}</pre>
+   <hr>
+<div class="mx-3">
+   FirstNameValue: <pre>{{empFormss.get('fName').value}}</pre>
+   FirstNameStatus: <pre>{{empFormss.get('fName').status}}</pre>
+   FirstNameValue: <pre>{{empFormss.get('fName').value}}</pre>
+   FirstNameStatus: <pre>{{empFormss.get('fName').status}}</pre>
+
+   LastNameValue: <pre>{{empFormss.get('lName').value}}</pre>
+   LastNameStatus: <pre>{{empFormss.get('lName').status}}</pre>
+
+   GenderValue: <pre>{{empFormss.get('type').value}}</pre>
+   genderStatus: <pre>{{empFormss.get('type').status}}</pre>
+
+   OptionValue: <pre>{{empFormss.get('degrees').value}}</pre>
+   OptionStatus: <pre>{{empFormss.get('degrees').status}}</pre>
+
+
+   
+   
+   
+   
+</div>
+
+<button type="submit" class="btn btn-primary" [disabled] = "fnForm.invalid">submit</button>
+</form>
+
+<div class="continer">
+<input type="file" name="nmf11" id="nmf11" class="form-control" (change)= "inpFiles($event)">
+<button type="button" class="btn btn-danger" (click)="imgUpload($event)">ImageUpload</button>
+<img src="{{image}}" alt="img" style="height:10rem; width:10rem">
+</div>
+</div>
+
+
+
+<!-- <img src="assets/images/dice1.png" alt="img"> -->
